@@ -223,7 +223,7 @@
         return increasedRate;
     } catch (error) {
         console.error('Erro ao buscar a cotação do dólar:', error);
-        const defaultRate = 5.545;
+        const defaultRate = 5.5;
         const increasedDefaultRate = defaultRate * 1.02; // Aumenta a cotação padrão em 1,2%
         return increasedDefaultRate;
     }
