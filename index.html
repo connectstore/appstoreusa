@@ -216,14 +216,14 @@
 <script>
     async function fetchExchangeRate() {
     try {
-        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const response = await fetch('httpss://api.exchangerate-api.com/v4/latest/USD');
         const data = await response.json();
         const exchangeRate = data.rates.BRL;
         const increasedRate = exchangeRate * 1.02; // Aumenta a cotação em 1,2%
         return increasedRate;
     } catch (error) {
         console.error('Erro ao buscar a cotação do dólar:', error);
-        const defaultRate = 5.62;
+        const defaultRate = 5.61;
         const increasedDefaultRate = defaultRate * 1.02; // Aumenta a cotação padrão em 1,2%
         return increasedDefaultRate;
     }
