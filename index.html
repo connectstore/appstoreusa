@@ -7,7 +7,7 @@
    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background-color: #fafafa;
             padding: 20px;
             margin: 0;
             display: flex;
@@ -27,48 +27,47 @@
         .container {
             width: 100%;
             max-width: 500px;
-            background-color: #ffffff;
             padding: 20px;
         }
         .card {
-            margin: 10px 0;
-            padding: 15px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .card.selected {
-            border: 2px solid #3C3B6E; /* Azul da bandeira americana */
-        }
-        .highlight {
-            background-color: #3C3B6E; /* Azul da bandeira americana */
-            color: #FFFFFF;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin-left: auto;
-        }
+        margin: 10px 0;
+        padding: 15px;
+        background-color: #E5E7EB; /* Cinza claro */
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .card:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .card.selected {
+        border: 2px solid #2563EB; /* Azul */
+    }
+    .highlight {
+        background-color: #2563EB; /* Azul */
+        color: #FFFFFF; /* Branco */
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-left: auto;
+    }
         .title {
             font-size: 30px;
-            color: #333333;
+            color: #1F2937;
             text-align: center;
             margin-bottom: 10px;
         }
         .subtitle {
             font-size: 16px;
-            color: #666666;
+            color: #6B7280;
             text-align: center;
             margin-bottom: 20px;
         }
         .value {
             flex-grow: 1;
             font-size: 20px;
-            color: #333333;
+            color: #1F2937;
             margin-left: 10px;
         }
         .popup {
@@ -105,19 +104,19 @@
         }
         .popup .summary {
             font-size: 20px;
-            color: #212121;
+            color: #1F2937;
             text-align: center;
             margin-bottom: 8px;
         }
         .popup .total {
             font-size: 40px;
-            color: #616161;
+            color: #374151;
             text-align: center;
             margin-bottom: 8px;
         }
         .popup .fee {
             font-size: 16px;
-            color: #757575;
+            color: #6B7280;
             padding: 8px;
             border-radius: 4px;
             text-align: center;
@@ -125,7 +124,7 @@
         }
         .popup .message {
             font-size: 16px;
-            color: #616161;
+            color: #374151;
             margin: 8px 0;
             text-align: center;
         }
@@ -139,7 +138,7 @@
             text-align: center;
             font-size: 18px;
             color: #FFFFFF;
-            background-color: #3C3B6E; /* Azul da bandeira americana */
+            background-color: #2563EB; /* Azul da bandeira americana */
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -152,7 +151,7 @@
             right: 0;
             margin: 0;
             padding: 14px;
-            background-color: #3C3B6E; /* Azul da bandeira americana */
+            background-color: #2563EB; /* Azul da bandeira americana */
             color: #FFFFFF;
             text-align: center;
             font-size: 18px;
@@ -161,7 +160,11 @@
             cursor: pointer;
         }
         .button:hover {
-            background-color: #2E2D59; /* Cor do botão ao passar o mouse */
+            background-color: #2563EB; /* Cor do botão ao passar o mouse */
+        }
+        .cancel-button:hover {
+            background-color: #FF0000;
+            margin-top: 10px;
         }
         .bottom-button {
             position: relative;
@@ -191,11 +194,11 @@
     <div class="card" onclick="selectCard('value7')">
         <input type="radio" name="value" id="value7" value="7">
         <label for="value7" class="value">US$ 7</label>
+        <span class="highlight">Mais escolhido</span>
     </div>
     <div class="card" onclick="selectCard('value12')">
         <input type="radio" name="value" id="value12" value="12">
         <label for="value12" class="value">US$ 12</label>
-        <span class="highlight">Mais escolhido!</span>
     </div>
     <div class="card" onclick="selectCard('value25')">
         <input type="radio" name="value" id="value25" value="25">
