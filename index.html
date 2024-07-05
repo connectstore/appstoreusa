@@ -219,9 +219,9 @@
 <script>
     async function fetchExchangeRate() {
     try {
-        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const response = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
         const data = await response.json();
-        const exchangeRate = data.rates.BRL;
+        const exchangeRate = data.USDBRL.bid;
         const increasedRate = exchangeRate * 1.02; // Aumenta a cotação em 1,2%
         return increasedRate;
     } catch (error) {
