@@ -366,6 +366,11 @@
         //Oculta o botão "Continuar" ao abrir a página.
     document.getElementById('continueButton').classList.add('hidden'); // Oculta o botão "Continuar"
     
+    document.addEventListener("DOMContentLoaded", function() {
+        // Seleciona automaticamente o cartão ao carregar a página
+        selectCard('value10'); 
+    });
+    
     function selectCard(cardId) {
         document.getElementById('paymentPopup').classList.remove('active');
         // Mostra o botão "Continuar" ao selecionar a opção
@@ -411,7 +416,8 @@
         document.getElementById('paymentPopup').classList.remove('active');
         document.getElementById('continueButton').classList.remove('hidden'); // Mostra o botão "Continuar"
     });
-
+   
+    // Forma antiga de pagar
     document.getElementById('payButton').addEventListener('click', function() {
         var selectedValue = document.querySelector('input[name="value"]:checked').value;
         var totalValue = parseFloat(selectedValue) + 3; // Parece haver um erro aqui, a taxa fixa é 3
@@ -419,9 +425,9 @@
         var totalInBRL = totalValue * parseFloat(exchangeRate);
         var roundedTotalInBRL = customRound(totalInBRL);
         var message = "Quero concluir o meu pedido #APPSTOREUSA" + selectedValue + "\n\nDetalhes do pedido\n1x US$ " + selectedValue + " (App Store USA)\n1x US$ 3 (Taxa de processamento)\nDolár: R$ " + exchangeRate + "\nTotal em reais: R$ " + roundedTotalInBRL;
-        var whatsappUrl = "https://api.whatsapp.com/send?phone=+553398801838&text=" + encodeURIComponent(message);
+        var whatsappUrl = "https://api.whatsapp.com/send?phone=+553398737904&text=" + encodeURIComponent(message);
         window.location.href = whatsappUrl;
-    });
+    }); 
 
     // Atualiza a taxa de câmbio quando a página é carregada
     window.onload = updateExchangeRate;
